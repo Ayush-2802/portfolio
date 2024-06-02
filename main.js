@@ -624,7 +624,7 @@
                     y: t.vertical.newScroll,
                   };
                 }),
-                (t.prototype.innerHeight = function () {
+                (t.prototype.innerHeight = function (ea) {
                   return this.element == this.element.window
                     ? i.viewportHeight()
                     : this.adapter.innerHeight();
