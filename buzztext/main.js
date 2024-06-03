@@ -40,35 +40,13 @@
     1: [
       function (e, t, n) {
         "use strict";
-        e("./partials/bodyclass"),
         e("./partials/welcome");
       },
       {
-        "./partials/bodyclass": 2,
-        "./partials/welcome": 3,
+        "./partials/welcome": 2,
       },
     ],
     2: [
-      function (e, t, n) {
-        "use strict";
-        for (
-          var r = document.querySelector("body"),
-            i = 1e3,
-            o = 3e3,
-            a = 0,
-            s = 1;
-          a <= o;
-
-        )
-          0 == a
-            ? r.classList.add("is_ready")
-            : setTimeout(function () {
-                r.classList.add("is_now_" + s * i), s++;
-              }, a),
-            (a += i);
-      },
-      {},
-    ],3: [
       function (e, t, n) {
         "use strict";
         var r = function () {
