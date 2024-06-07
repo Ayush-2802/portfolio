@@ -43,3 +43,14 @@ body {
     cursor: crosshair;
      background-color: #0d0d0d; 
 }
+
+.maindiv{
+  font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+  font-weight:100; 
+  background: rgba(0,0,0,0.3);
+  color: white;
+  padding: 2rem;
+  width: 91%;
+  margin: auto;
+  font-size: 1.2rem;
+}
