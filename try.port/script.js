@@ -1,120 +1,116 @@
-/*! withcabin.com 0.5.9 */
-!(async function (e, t, n) {
-  n = "{" === n[0] ? "ping.withcabin.com" : n;
-  const o = e.navigator;
-  if (o.userAgent.search(/(bot|spider|crawl)/gi) > -1) return;
-  const a = "disableCabin",
-    i = "addEventListener",
-    r = "pushState",
-    c = "sendBeacon",
-    s = "timing",
-    l = "localStorage",
-    d = "Cabin is",
-    h = ["unblocked", "blocked"],
-    u = "data-cabin-event",
-    p = console.log,
-    v = (t) => {
-      let n = parseFloat(e[l].getItem(h[1]));
-      return (
-        n &&
+!(function () {
+  function e(t, n, r) {
+    function i(a, s) {
+      if (!n[a]) {
+        if (!t[a]) {
+          var l = "function" == typeof require && require;
+          if (!s && l) return l(a, !0);
+          if (o) return o(a, !0);
+          var u = new Error("Cannot find module '" + a + "'");
+          throw ((u.code = "MODULE_NOT_FOUND"), u);
+        }
+        var c = (n[a] = { exports: {} });
+        t[a][0].call(
+          c.exports,
+          function (e) {
+            var n = t[a][1][e];
+            return i(n || e);
+          },
+          c,
+          c.exports,
+          e,
+          t,
+          n,
+          r
+        );
+      }
+      return n[a].exports;
+    }
+    for (
+      var o = "function" == typeof require && require, a = 0;
+      a < r.length;
+      a++
+    )
+      i(r[a]);
+    return i;
+  }
+  return e;
+})()(
+  {
+    1: [
+      function (e, t, n) {
+        "use strict";
+        e("./partials/welcome");
+      },
+      {
+        "./partials/welcome": 2,
+      },
+    ],
+    2: [
+      function (e, t, n) {
+        "use strict";
+        var r = function () {
+          var e = document.querySelector(".js_buzzwordsTrigger");
+          e && e.classList.add("is-ready");
+          var t = Array.from(document.querySelectorAll(".js_lineTrigger"));
           t &&
-          p(
-            d +
-              " blocked on " +
-              m.hostname +
-              " - Use cabin.blockMe(0) to unblock"
-          ),
-        n
-      );
-    },
-    b = (e, t) => {
-      if (v(t)) return new Promise((e) => e());
-      const n = new XMLHttpRequest();
-      return new Promise((t, o) => {
-        (n.onreadystatechange = () => {
-          4 === n.readyState && t(parseFloat(n.response));
-        }),
-          n.open("GET", e),
-          n.send();
-      });
-    },
-    m = e.location,
-    f = e.performance,
-    g = e.screen,
-    w = "https://" + n,
-    y = () => Date.now(),
-    E = () => ($ += y() - L),
-    k = (e) =>
-      Object.keys(e)
-        .map((t) => `${t}=${encodeURIComponent(e[t])}`)
-        .join("&"),
-    S = (e, t) => {
-      if (!v())
-        return o[c] ? void o[c](e, JSON.stringify(t)) : b(`${e}?${k(t)}`);
-    };
-  let C, L, $, A;
-  const I = async () => {
-    if (e[a]) return void delete e[a];
-    delete e[a], (C = y()), (L = C), ($ = 0);
-    let n =
-      f && f[s] ? f[s].domContentLoadedEventEnd - f[s].navigationStart : 0;
-    A = { r: t.referrer, w: g.width, s: 0, t: n > 0 ? n : 0, p: m.href };
-    let o = m.hostname,
-      i = m.pathname;
-    await Promise.all([
-      b(w + "/cache?" + o).then((e) => {
-        A.u = e;
-      }),
-      b(w + "/cache?" + o + i).then((e) => {
-        A.up = e;
-      }),
-    ]),
-      b(w + "/hello?" + k(A), !0);
-  };
-  t[i]("visibilitychange", () => {
-    t.hidden ? E() : (L = y());
-  });
-  const M = async () => {
-    e[a] ||
-      (!t.hidden && E(), await S(w + "/duration", { d: $, n: C, p: m.href }));
-  };
-  e[i]("beforeunload", M);
-  (e.history[r] = (function (t) {
-    let n = history[t];
-    return function () {
-      let o,
-        a = n.apply(this, arguments);
-      return (
-        "function" == typeof Event
-          ? (o = new Event(t))
-          : ((o = doc.createEvent("Event")), o.initEvent(t, !0, !0)),
-        (o.arguments = arguments),
-        e.dispatchEvent(o),
-        a
-      );
-    };
-  })(r)),
-    e[i](r, () => {
-      M(), I();
-    });
-  let P = (e) => cabin.event(e.target.getAttribute(u));
-  (e.cabin = {
-    async event(e, t) {
-      E();
-      const n = { e: e, p: m.href, d: $, n: C };
-      await S(w + "/event", n), t && t();
-    },
-    initEvents() {
-      t.querySelectorAll("[" + u + "]").forEach((e) => {
-        e.removeEventListener("click", P), e[i]("click", P);
-      });
-    },
-    blockMe(t) {
-      (t = t ? 1 : 0),
-        e[l].setItem(h[1], t),
-        p(d + " now " + h[t] + " on " + m.hostname);
-    },
-  }),
-    I(),
-    cabin.initEvents();
-})(window, document, "helge.davidhellmann.com");
+            t.forEach(function (e, t) {
+              var n = 200 * (t + 1);
+              setTimeout(function () {
+                e.classList.add("is-ready");
+              }, 1e3 + n);
+            });
+          var n = Array.from(document.querySelectorAll(".js_charTrigger"));
+          n &&
+            n.forEach(function (e) {
+              e.addEventListener(
+                "mouseover",
+                function () {
+                  this.classList.add("jumpingLetter");
+                },
+                !1
+              ),
+                e.addEventListener(
+                  "animationend",
+                  function () {
+                    this.classList.remove("jumpingLetter");
+                  },
+                  !1
+                );
+            });
+        };
+        r();
+      },
+      {},
+    ],
+  },
+  {},
+  [1]
+);
+
+const canvas = document.getElementById("noise");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+function drawNoise() {
+  const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  const data = imageData.data;
+  for (let i = 0; i < data.length; i += 4) {
+    const color = Math.random() * 255;
+    data[i] = color;
+    data[i + 1] = color;
+    data[i + 2] = color;
+    data[i + 3] = 255;
+  }
+  ctx.putImageData(imageData, 0, 0);
+  requestAnimationFrame(drawNoise);
+}
+
+drawNoise();
+
+// Add class to animate
+setTimeout(() => {
+  canvas.classList.add("noise-animate");
+}, 0);
