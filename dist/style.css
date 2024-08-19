@@ -1,7 +1,6 @@
 body {
   height: 100vh; 
   background: #000;
-  cursor: crosshair;
   margin: 0;
   display: flex;
   font-family: monospace;
@@ -56,7 +55,6 @@ body .cursor__ball circle {
 
 body {
   /* background-color: #161717; */
-  cursor: crosshair;
    background-color: #0d0d0d; 
 }
 
