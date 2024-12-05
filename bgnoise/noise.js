@@ -20,7 +20,7 @@ function drawNoise() {
 
 drawNoise();
 
-// Add class to animate
+// Add class to start animation
 setTimeout(() => {
   canvas.classList.add("noise-animate");
 }, 0);
