@@ -1,0 +1,46 @@
+:root {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+    monospace;
+  --color-subtext: #888888;
+}
+
+::selection {
+  color: white;
+  background: #31929A;
+}
+
+/* LAYOUT */
+
+body {
+  color: #ebebeb;
+  font-size: 125%;
+}
+
+.content {
+  margin-bottom: 2rem;
+  max-width: 60rem;
+  margin: 0 auto;
+  font-family: var(--font-sans);
+  margin-top: 4rem;
+  line-height: 1.3;
+
+  padding-bottom: 50rem;
+}
+
+.icn svg {
+  height: 100%;
+  width: 100%;
+}
+
+/* Card */
+
+.card {
+  padding: 20px;
+  border: 1px solid #27272a;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  color: white;
+}
