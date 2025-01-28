@@ -1,6 +1,4 @@
 body {
-  margin: 0;
-  padding: 0;
   background-color: #000;
   font-family: "Inter", sans-serif;
 }
@@ -701,37 +699,4 @@ html {
   .contactName {
     font-size: 28px;
   }
-}
-
-.maruee{
-  padding-bottom: 0%;
-}
-.marquee-text {
-    overflow: clip;
-  }
-  
-.marquee-text-track {
-    display: flex;
-    width: max-content;
-    animation: marquee-move-text var(--speed, 100s) linear infinite;
-  }
-  
-.marquee-text p {
-    color: white;
-    font-family: 'offbit';
-  }
-  
-@keyframes marquee-move-text {
-    from {
-      transform: translateX(-50%);
-    }
-  }
-
-p:hover {
-    color: rgb(202 138 4);
-  }
-
-@font-face {
-    font-family: 'offbit';
-    src: url(InputMono-ExtraLight.ttf);
 }
