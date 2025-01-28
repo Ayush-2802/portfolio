@@ -59,6 +59,17 @@ var tl2 = gsap.timeline({
 });
 
 tl2.fromTo(
+  "#lang",
+  { opacity: 0, y: 100 },
+  {
+    opacity: 1,
+    y: 0,
+    ease: "power.out",
+    duration: 1,
+  }
+);
+
+tl2.fromTo(
   "#front",
   { opacity: 0, y: 100 },
   {
@@ -71,17 +82,6 @@ tl2.fromTo(
 
 tl2.fromTo(
   "#back",
-  { opacity: 0, y: 100 },
-  {
-    opacity: 1,
-    y: 0,
-    ease: "power.out",
-    duration: 1,
-  }
-);
-
-tl2.fromTo(
-  "#lang",
   { opacity: 0, y: 100 },
   {
     opacity: 1,
