@@ -15,10 +15,10 @@ html {
 .container {
   display: flex;
   flex-direction: column;
-  padding-top: 20px;
+  padding-top: 40px;
   padding-bottom: 40px;
-  padding-left: 15%;
-  padding-right: 15%;
+  padding-left: 16%;
+  padding-right: 16%;
   gap: 10px;
 }
 
@@ -27,6 +27,7 @@ html {
 .navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #131315;
   color: #fff;
   padding: 16px;

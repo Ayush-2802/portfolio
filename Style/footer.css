@@ -1,0 +1,62 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* Font declaration */
+@font-face {
+  font-family: 'offbit';
+  src: url(InputMono-ExtraLight.ttf);
+}
+
+/* Layout components */
+main {
+  min-height: 100vh;
+  background: black;
+  position: relative;
+  z-index: 1;
+}
+
+footer {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  background-color: #1c1c1c;
+}
+
+/* Marquee animation */
+.marquee-text {
+  overflow: hidden;
+  width: 100%;
+  font-size: 12px;
+}
+
+.marquee-text-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-move-text var(--speed, 100s) steps(500) infinite;
+}
+
+.marquee-text p {
+  color: white;
+  font-family: 'offbit';
+}
+
+p:hover {
+  color: orange;
+}
+
+@keyframes marquee-move-text {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
